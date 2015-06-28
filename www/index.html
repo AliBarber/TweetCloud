@@ -1,0 +1,74 @@
+
+<html>
+<head>
+<title>Election 2015 Word Cloud - What are they saying?</title>
+
+<!-- <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" /> -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script> -->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="./wordcloud2_src.js"></script>
+</head>
+<body onload="load_cloud('all')">
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=194662733909019&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="canvas_div" style="width:64%; height:100%; margin:0 auto; position:relative;">
+<canvas id="wordCanvas"></canvas>
+</div>
+
+
+
+<div id="right_bar" style="display:inline-block; width=20%; text-align:left; position:absolute; top:20px; right:20px; font-family: 'Open Sans', sans-serif; width:18%;" >
+	<span style='font-size:24px'>Show tweets from:</span><br />
+	<input type="radio" name="party_filter" value="all" id="party_filter_all" checked='checked'><label for="party_filter_all"> All</label><br />
+	<input type="radio" name="party_filter" value="con" id="party_filter_con"><label for="party_filter_con"> Conservative</label><br />
+	<input type="radio" name="party_filter" value="lab" id="party_filter_lab"><label for="party_filter_lab"> Labour</label><br />
+	<input type="radio" name="party_filter" value="lbd" id="party_filter_lbd"><label for="party_filter_lbd"> Liberal Democrats</label><br />
+	<input type="radio" name="party_filter" value="grn" id="party_filter_grn"><label for="party_filter_grn"> Green</label><br />
+	<input type="radio" name="party_filter" value="snp" id="party_filter_snp"><label for="party_filter_snp"> SNP</label><br />
+	<input type="radio" name="party_filter" value="ukp" id="party_filter_ukp"><label for="party_filter_ukp"> UKIP</label><p />
+
+
+</div>
+
+<div id="left_bar" style="display:inline-block; width=20%; text-align:left; position:absolute; top:20px; left:20px; font-family: 'Open Sans', sans-serif; width:18%;" >
+	<span style="font-size:32px; font-weight:bold;"> #GE 2015 - What are they saying?</span><p />
+	The number of times a specific word has been mentioned by each of the main political parties official twitter accounts since midnight on the 30th of March 2015.<p />
+	Filtering by time coming soon.<p />
+	Mouse over word for details.<p />
+	<a href="https://www.gov.uk/register-to-vote">Register to vote</a>
+</div>
+
+<div id="bottom_right" style="display:inline-block; width=20%; text-align:left; position:absolute; bottom:20px; right:20px; font-family: 'Open Sans', sans-serif; width:18%;"> Made by <a href="http://www.alastairbarber.com">Alastair Barber</a> using <a href="http://timdream.org/wordcloud2.js/#love">wordcloud2.js</a> &amp; <a href="https://twython.readthedocs.org/en/latest/">twython</a>. <p />
+	<div class="fb-like" data-href="http://alastair.io" data-width="50" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><p/>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alastair.io" data-via="ali_barber" data-hashtags="ge2015">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+
+<div id="word_info_div" style="display:none; position:absolute;border:1px solid black;width:320px;height:240px;background-color:rgba(255,255,204,0.95); font-family: 'Open Sans', sans-serif; font-size:18px">
+
+</div>
+
+<script src="./mainpagescript_v2.js"> </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61530256-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
