@@ -1,7 +1,6 @@
 #! /usr/bin/python
 import sqlite3
 import json
-import requests
 
 conn = sqlite3.connect('/home/alastair/electionwords_test/words_db.sqlite')
 cursor = conn.cursor()
@@ -22,5 +21,5 @@ for row in rows:
 wordsJSON = json.dumps(words)
 print wordsJSON
 
-payload = {'json_data':wordsJSON}
-r = requests.post('http://direct-supersecret.alastair.io/receive_data.php',payload)
+with open('www/data.json','wb') as datafile:
+	datafile.write(wordsJSON)
