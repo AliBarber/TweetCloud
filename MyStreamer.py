@@ -5,8 +5,11 @@ import words
 import sqlite3
 class MyStreamer(TwythonStreamer):
 
+	#Take the tweet - get the words out of it and figure out who it's from, then call wordRead with it to check it and 
+	# add it to the database 
 	def on_success(self,data):
 		if 'text' in data:
+			#Bit of a hack for dealing with special characters
 			tweet_user_id = data['user']['id_str'].encode('utf-8')
 			if tweet_user_id in words.party_id_lookup.keys():
 				tweet_text = data['text'].encode('utf-8','ignore')

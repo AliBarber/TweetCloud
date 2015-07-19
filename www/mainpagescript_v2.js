@@ -1,3 +1,7 @@
+// Electionwords by Alastair Barber - 2015. alastair@a-barber.com - http://alastair.io
+
+// My very fist JQuery script and probably the first time I've written JavaScript in 10 years. Go easy!
+
 var word_list = [];
 var word_dictionary = {};
 var full_name_lookup = {};
